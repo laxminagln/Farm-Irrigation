@@ -1,0 +1,32 @@
+Automatic Plant Irrigation System using Arduino, which automatically provides water to your plants 
+and keep you updated by sending message to your cell phone. In This Plant Watering System, Soil 
+Moisture Sensor checks the moisture level in the soil and if moisture level is low then Arduino 
+switches On a water pump to provide water to the plant. Water pump gets automatically off when 
+system finds enough moisture in the soil. Whenever system switched On or off the pump, a message 
+is sent to the user via GSM module, updating the status of water pump and soil moisture. This system 
+is very useful in Farms, gardens, home etc. This system is completely automated and there is no need 
+for any human intervention. 
+Here we have used TTL SIM800 GSM module. The SIM800 is a complete Quad-band GSM/GPRS Module which can 
+be embedded easily by customer or hobbyist. SIM900 GSM Module provides an industry-standard interface; 
+the SIM800 delivers GSM/GPRS 850/900/1800/1900MHz performance for voice, SMS, Data with low power con-
+-sumption. The design of this SIM800 GSM Module is slim and compact.
+Quad - band GSM/GPRS module in small size.
+GPRS Enabled
+TTL Output
+Arduino is used for controlling whole the process of this Automatic Plant Watering System. The output 
+of soil sensor circuit is directly connected to digital pin D7 of Arduino. A LED is used at the sensor 
+circuit, this LED’s ON state indicates the presence of moisture in the soil and OFF state indicates 
+the absense of moisture in the soil.
+GSM module is used for sending SMS to the user. Here we have used TTL SIM800 GSM module, which gives 
+and takes TTL logic directly (user may use any GSM module). A LM317 Voltage regulator is used to power 
+the SIM800 GSM module. LM317 is very sensitive to voltage rating and it is recommended to read its 
+datasheet before use. Its operating voltage rating is 3.8v to 4.2v (please prefer 3.8v to operate it).
+If moisture is present in soil then there is conduction between the two probes of Soil Moisture sensor 
+and due to this conduction, transistor Q2 remains in triggered/on state and Arduino Pin D7 remains Low. 
+When Arduino reads LOW signal at D7, then it sends SMS to user about “Soil Moisture is Normal. Motor 
+turned OFF” and water pump remains in Off state.
+Now if there is no Moisture in soil then Transistor Q2 becomes Off and Pin D7 becomes High. Then Arduino 
+reads the Pin D7 and turns On the water motor and also sends message to user about “Low Soil Moisture 
+detected. Motor turned ON”. Motor will automatically turn off when there is sufficient moisture in the soil. 
+Further check the Demonstration Video and Code (given at the end) for better understanding the project 
+working process.
